@@ -61,10 +61,12 @@ This circuit component can perform **2's complement** operations, **1's compleme
 
 ## Part 3
 
-### Storage Unit
-
+### Accumulator and PC
+A 4-bit storage unit is needed since this microprocessor operates on 4 bits. A **4-bit parallel D register** is needed and this will be a component in the CPUs accumulator. 
+![](https://github.com/KayeJD/Microprocessor/blob/main/4bitreg.gif)
 ### Instantiating RAM
 The memory for this project has 16 words, with 4 bits each word (_4-bit RAM with 16 4-bit words_).
+
 ### Testing the brainless CPU
 
 ## Part 4
