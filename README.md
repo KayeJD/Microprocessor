@@ -4,6 +4,7 @@ This project follows my process of building the digital logic for a brainless mi
 Design testing involves generating test waveform files to show toggling between inputs and their outputs. The designs are ran through Verilog, and waveforms are viewed with GTKWave. The final delivery of the project is a brainless microprocessor that is programmable through the manipulation of  </br>
 
 
+
 ## Part 1
 We start by building a combinational logic circuit using primitive components. 
 ### 4-Bit Increment
@@ -23,11 +24,22 @@ A 3-input XOR gate
 ![](https://github.com/KayeJD/Microprocessor/blob/main/fulladder.gif)
 
 
+
 ## Part 2
 We need to be able to control the data flow through the circuit using the 4-bit 2-to-1 multiplexer. We also need to create the arithmetic logic unit (ALU) to perform add, sub, negate, etc. and the logical operations. 
-### 2-bit Mux
 ### 4-bit 2-to-1 Mux
-![](https://github.com/KayeJD/Microprocessor/blob/main/4bitmux.gif)
+![](https://github.com/KayeJD/Microprocessor/blob/main/4bitmux.gif) </br>
+2-bit-mux logic:
+| s | a | b | y |
+| --- | --- | --- | --- |
+| 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 0 |
+| 0 | 1 | 0 | 1 |
+| 0 | 1 | 1 | 1 |
+| 1 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 1 |
+| 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 1 |
 ### Arithmetic Logic Unit 
 #### NOT_NEG
 This circuit component can perform **2's complement** operations, **1's complement** operations, or allow input to **pass through**.
@@ -45,8 +57,15 @@ This circuit component can perform **2's complement** operations, **1's compleme
 | 1 | 0 | Pass Through |
 | 1 | 1 | Pass Through |
 
+
+
 ## Part 3
 
+### Storage Unit
+
+### Instantiating RAM
+The memory for this project has 16 words, with 4 bits each word (_4-bit RAM with 16 4-bit words_).
+### Testing the brainless CPU
 
 ## Part 4
 The final part of building the microprocessor involves defining the instruction set for the controller, creating a simple program to insert into the microprocessor's memory, and executing the program.
