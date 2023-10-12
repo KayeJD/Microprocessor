@@ -41,6 +41,7 @@ We need to be able to control the data flow through the circuit using the 4-bit 
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 |
 ### Arithmetic Logic Unit 
+
 #### NOT_NEG
 This circuit component can perform **2's complement** operations, **1's complement** operations, or allow input to **pass through**.
 | Invert | Neg | Function |
@@ -64,6 +65,7 @@ This circuit component can perform **2's complement** operations, **1's compleme
 ### Accumulator and PC
 A 4-bit storage unit is needed since this microprocessor operates on 4 bits. A **4-bit parallel D register** is needed and this will be a component in the CPUs accumulator. 
 ![](https://github.com/KayeJD/Microprocessor/blob/main/4bitreg.gif)
+![](https://github.com/KayeJD/Microprocessor/blob/main/pc.gif)
 ### Instantiating RAM
 The memory for this project has 16 words, with 4 bits each word (_4-bit RAM with 16 4-bit words_).
 
