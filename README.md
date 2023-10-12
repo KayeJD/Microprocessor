@@ -14,7 +14,7 @@ A 3-input XOR gate
 ## Part 2
 We need to be able to control the data flow through the circuit using the 4-bit 2-to-1 multiplexer. We also need to create the arithmetic logic unit (ALU) to perform add, sub, negate, etc. and the logical operations. 
 #### 4-bit 2-to-1 Multiplexer
-![](https://github.com/KayeJD/Microprocessor/blob/main/4bitmux.mp4)
+![4bitmux](https://github.com/KayeJD/Microprocessor/blob/main/4bitmux.mp4)
 #### Arithmetic Logic Unit 
 
 ## Part 3
