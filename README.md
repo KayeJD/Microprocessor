@@ -41,7 +41,7 @@ We need to be able to control the data flow through the circuit using the 4-bit 
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 |
 ### Arithmetic Logic Unit 
-
+![](https://github.com/KayeJD/Microprocessor/blob/main/alu.gif)
 #### NOT_NEG
 This circuit component can perform **2's complement** operations, **1's complement** operations, or allow input to **pass through**.
 | Invert | Neg | Function |
