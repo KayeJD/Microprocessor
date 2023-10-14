@@ -28,6 +28,7 @@ A 3-input XOR gate
 ## Part 2
 We need to be able to control the data flow through the circuit using the 4-bit 2-to-1 multiplexer. We also need to create the arithmetic logic unit (ALU) to perform add, sub, negate, etc. and the logical operations. 
 ### 4-bit 2-to-1 Mux
+The microprocessor I'm designing operates on 4-bit numbers, therefore, to accomplish multiplexer behavior on 4-bit numbers, I simply placed four instances of 2-bit muxes (logic table below) and wired up the _sel_ input for the 2-bit muxes from one singular _sel_ signal. Inputs _a_ and _b_ are 4-but buses and are split by bit and wired into each of the 2-bit mux's _a_ inputs. The same concept is applied for _b_. When **sel = 0**, the value on **a** is displayed for the output. When **sel = 1**, the value of **b** is passed through to the output. 
 ![](https://github.com/KayeJD/Microprocessor/blob/main/4bitmux.gif) </br>
 2-bit-mux logic:
 | s | a | b | y |
@@ -41,6 +42,7 @@ We need to be able to control the data flow through the circuit using the 4-bit 
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 |
 ### Arithmetic Logic Unit 
+
 ![](https://github.com/KayeJD/Microprocessor/blob/main/alu.gif)
 #### NOT_NEG
 This circuit component can perform **2's complement** operations, **1's complement** operations, or allow input to **pass through**.
