@@ -42,7 +42,6 @@ The microprocessor I'm designing operates on 4-bit numbers, therefore, to accomp
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 |
 ### 2.2 Arithmetic Logic Unit 
-
 ![](https://github.com/KayeJD/Microprocessor/blob/main/alu.gif)
 #### NOT_NEG
 This circuit component can perform **2's complement** operations, **1's complement** operations, or allow input to **pass through**.
@@ -63,22 +62,26 @@ This circuit component can perform **2's complement** operations, **1's compleme
 
 
 ## Part 3
-
 ### 3.1 Accumulator and PC
 A 4-bit storage unit is needed since this microprocessor operates on 4 bits. A **4-bit parallel D register** is needed and this will be a component in the CPUs accumulator. 
 ![](https://github.com/KayeJD/Microprocessor/blob/main/4bitreg.gif)
 ![](https://github.com/KayeJD/Microprocessor/blob/main/pc.gif)
 ### 3.2 Instantiating RAM
 We still need a memory component in order to store instructions and data. The memory for this project has 16 words, with 4 bits each word (_4-bit RAM with 16 4-bit words_). </br>
-The **ram_vals.hex** file is used to initialize the contents of the RAM
-
+The **ram_vals.hex** file is used to initialize the contents of the RAM. Each line of is read in binary and then loaded into each address in the RAM. A short commented instruction set is inserted as an example
+![image](https://github.com/KayeJD/Microprocessor/assets/139111295/b0e1235b-6ae5-42f6-b5cd-49c3ee51e815)
 ### 3.3 Testing the brainless CPU
+![image](https://github.com/KayeJD/Microprocessor/assets/139111295/6994a54c-a4ae-4330-b41c-dfc16f8d8766)
+
+
 
 ## Part 4
 The final part of building the microprocessor involves defining the instruction set for the controller, creating a simple program to insert into the microprocessor's memory, and executing the program.
 ### 4.1 Memory-Address-Generation Circuit
 First, we modify the 4-bit incrementer to generate the memory addresses for the CPU (which acts like the PC). 
 ### 4.2 Controller Input
+
+
 
 ## Part 5 - Complete Microprocessor Circuit
 ### GTKWave Simulation
