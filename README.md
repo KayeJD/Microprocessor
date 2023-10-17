@@ -84,11 +84,17 @@ The MAR takes a memory address from the RAM into the _data_bus_ and _load_mar_ i
 ### 4.2 Controller Input
 The controller will automatically set all of the signals to execute each operation. The **Program Ram** stores the opcodes that stores operations in hexidecimal form. The ROM is going to be used to decode the instructions and generate all of the signals neededd to operate the CPU according to the instructions. The only other signals that will not be automated will be the **clk, reset, and data_in.** </br>
 Some of the instructions that will be used to test the microcontroller will not be completed in one clock cycle, so this microcontroller will be a **ROM-based finite state machine** that will be able to break down the opcodes into _micro-ops_. </br> </br>
-The ROM will have preloaded values. The **Instruction Register (IR) and the Step Register (SR)** combine to form the address inputted to the ROM (4 bits from the IR, and 2 bits from the SR). The **Instruction ROM** will act as the decoder for the control signals and the programmable logic for the finite-state machine. </br>
+The ROM will have preloaded values. The **Instruction Register (IR) and the Step Register (SR)** combine to form the address inputted to the ROM (4 bits from the IR, and 2 bits from the SR). The **Instruction ROM** will act as the decoder for the control signals and the programmable logic for the finite-state machine. The inpt for the IR will be the opcode stored inside the Program ROM, and to load it into the IR, the controller has to set the **load_ir** to _1 (The instruction fetch)_. The fetch state will begin each of the instructions.</br>
+The ROM values willl be loaded from the **rom_vals.hex** file. The _0x1205_ instruction is the hexadecimal value needed to correctly fetch each instruction and the _0x3FFF_ instruction to force Digital to write out the entires of the ROM when exporting to Digital. </br>
+![image](https://github.com/KayeJD/Microprocessor/assets/139111295/de7d8def-683c-4177-b5f0-7e3620fe8657) </br>
+![image](https://github.com/KayeJD/Microprocessor/assets/139111295/28f90c55-d557-43fb-b988-e42753102da9) </br>
+![image](https://github.com/KayeJD/Microprocessor/assets/139111295/1c235a2f-1b55-4ba2-b8f9-1b82dff9ffba) </br>
 Each component in the microcontroller is a copressed version of all the other components built in parts 1-3. 
 
 
 
 ## Part 5 - Complete Microprocessor Circuit
+### Microprocessor
+![](https://github.com/KayeJD/Microprocessor/blob/main/microprocessor.gif)
 ### GTKWave Simulation
 ![image](https://github.com/KayeJD/Microprocessor/assets/139111295/df8670d6-a2df-457b-827c-d9ae23ee01cd)
