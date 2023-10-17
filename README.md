@@ -78,7 +78,11 @@ The **ram_vals.hex** file is used to initialize the contents of the RAM. Each li
 ## Part 4
 The final part of building the microprocessor involves defining the instruction set for the controller, creating a simple program to insert into the microprocessor's memory, and executing the program.
 ### 4.1 Memory-Address-Generation Circuit
-First, we modify the 4-bit incrementer to generate the memory addresses for the CPU (which acts like the PC). 
+The memory address generation unit will be able to access memory locations in and out of sequential order. It will either automatically increment memory addresses after each instruction, or change memory locations in order to store or read data. This unit is comprised of a **register and incrementor (PC),** which will act like the pc, and a **memory address register (MAR).** </br>
+The MAR takes a memory address from the RAM into the _data_bus_ and _load_mar_ is the enable signal. 
+
+
+
 ### 4.2 Controller Input
 
 
