@@ -1,0 +1,17 @@
+v2.0 raw
+0    # Load ACC
+8    #   value to load
+1    # ADD ACC
+5    #   value to add
+5    # SUB ACC
+4    #   value to subtract
+3    # AND ACC
+3    #   AND bit mask 0011
+6    # STORE ACC
+E    #   Location to store
+2    # STOP
+0
+0
+0
+0
+0
