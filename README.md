@@ -7,7 +7,7 @@ Design testing involves generating test waveform files to show toggling between 
 
 ## Part 1
 We start by building a combinational logic circuit using primitive components. 
-### 4-Bit Increment
+### 1.1 4-Bit Increment
 We will use this component for the Program Counter (PC). The 4-bit incrementor is composed of 4 1-bit adders to accept a 4-bit binary number. This circuit produces a 4-bit binary number and a carry (CRY) output. If CRY is _1_, the output number is one more than the 4-bit input. </br> </br>
 ![](https://github.com/KayeJD/Microprocessor/blob/main/4bitinc.gif) </br>
 Half Adder Logic: </br>
@@ -17,17 +17,17 @@ Half Adder Logic: </br>
 | 0 | 1 | 1 | 0 |
 | 1 | 0 | 1 | 0 |
 | 1 | 1 | 0 | 1 |
-### 4-Bit Full Adder
+### 1.2 4-Bit Full Adder
 A 3-input XOR gate 
 ![](https://github.com/KayeJD/Microprocessor/blob/main/4bitadder.gif)
-#### Full Adder
+#### 1.3 Full Adder
 ![](https://github.com/KayeJD/Microprocessor/blob/main/fulladder.gif)
 
 
 
 ## Part 2
 We need to be able to control the data flow through the circuit using the 4-bit 2-to-1 multiplexer. We also need to create the arithmetic logic unit (ALU) to perform add, sub, negate, etc. and the logical operations. 
-### 4-bit 2-to-1 Mux
+### 2.1 4-bit 2-to-1 Mux
 The microprocessor I'm designing operates on 4-bit numbers, therefore, to accomplish multiplexer behavior on 4-bit numbers, I simply placed four instances of 2-bit muxes (logic table below) and wired up the _sel_ input for the 2-bit muxes from one singular _sel_ signal. Inputs _a_ and _b_ are 4-but buses and are split by bit and wired into each of the 2-bit mux's _a_ inputs. The same concept is applied for _b_. When **sel = 0**, the value on **a** is displayed for the output. When **sel = 1**, the value of **b** is passed through to the output. 
 ![](https://github.com/KayeJD/Microprocessor/blob/main/4bitmux.gif) </br>
 2-bit-mux logic:
@@ -41,7 +41,7 @@ The microprocessor I'm designing operates on 4-bit numbers, therefore, to accomp
 | 1 | 0 | 1 | 1 |
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 |
-### Arithmetic Logic Unit 
+### 2.2 Arithmetic Logic Unit 
 
 ![](https://github.com/KayeJD/Microprocessor/blob/main/alu.gif)
 #### NOT_NEG
@@ -64,20 +64,21 @@ This circuit component can perform **2's complement** operations, **1's compleme
 
 ## Part 3
 
-### Accumulator and PC
+### 3.1 Accumulator and PC
 A 4-bit storage unit is needed since this microprocessor operates on 4 bits. A **4-bit parallel D register** is needed and this will be a component in the CPUs accumulator. 
 ![](https://github.com/KayeJD/Microprocessor/blob/main/4bitreg.gif)
 ![](https://github.com/KayeJD/Microprocessor/blob/main/pc.gif)
-### Instantiating RAM
-The memory for this project has 16 words, with 4 bits each word (_4-bit RAM with 16 4-bit words_).
+### 3.2 Instantiating RAM
+We still need a memory component in order to store instructions and data. The memory for this project has 16 words, with 4 bits each word (_4-bit RAM with 16 4-bit words_). </br>
+The **ram_vals.hex** file is used to initialize the contents of the RAM
 
-### Testing the brainless CPU
+### 3.3 Testing the brainless CPU
 
 ## Part 4
 The final part of building the microprocessor involves defining the instruction set for the controller, creating a simple program to insert into the microprocessor's memory, and executing the program.
-#### Memory-Address-Generation Circuit
+### 4.1 Memory-Address-Generation Circuit
 First, we modify the 4-bit incrementer to generate the memory addresses for the CPU (which acts like the PC). 
-#### Controller Input
+### 4.2 Controller Input
 
 ## Part 5 - Complete Microprocessor Circuit
 ### GTKWave Simulation
