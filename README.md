@@ -79,11 +79,13 @@ The **ram_vals.hex** file is used to initialize the contents of the RAM. Each li
 The final part of building the microprocessor involves defining the instruction set for the controller, creating a simple program to insert into the microprocessor's memory, and executing the program.
 ### 4.1 Memory-Address-Generation Circuit
 The memory address generation unit will be able to access memory locations in and out of sequential order. It will either automatically increment memory addresses after each instruction, or change memory locations in order to store or read data. This unit is comprised of a **register and incrementor (PC),** which will act like the pc, and a **memory address register (MAR).** </br>
-The MAR takes a memory address from the RAM into the _data_bus_ and _load_mar_ is the enable signal. 
-
-
-
+The MAR takes a memory address from the RAM into the _data_bus_ and _load_mar_ is the enable signal to load the memory and push it into the output. When the _use_pc_ is high, the pc values drive the following memory address, when it is low, the MAR content is supplies into the address bus. 
+![](https://github.com/KayeJD/Microprocessor/blob/main/pgrmctr.gif)
 ### 4.2 Controller Input
+The controller will automatically set all of the signals to execute each operation. The **Program Ram** stores the opcodes that stores operations in hexidecimal form. The ROM is going to be used to decode the instructions and generate all of the signals neededd to operate the CPU according to the instructions. The only other signals that will not be automated will be the **clk, reset, and data_in.** </br>
+Some of the instructions that will be used to test the microcontroller will not be completed in one clock cycle, so this microcontroller will be a **ROM-based finite state machine** that will be able to break down the opcodes into _micro-ops_. </br> </br>
+The ROM will have preloaded values. The **Instruction Register (IR) and the Step Register (SR)** combine to form the address inputted to the ROM (4 bits from the IR, and 2 bits from the SR). The **Instruction ROM** will act as the decoder for the control signals and the programmable logic for the finite-state machine. </br>
+Each component in the microcontroller is a copressed version of all the other components built in parts 1-3. 
 
 
 
