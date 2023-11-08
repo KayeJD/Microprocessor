@@ -1,4 +1,4 @@
-# Microprocessor
+# Microprocessor (2021)
 This project follows my process of building the digital logic for a brainless microprocessor through the use of [Digital](https://github.com/hneemann/Digital/releases/latest/download/Digital.zip), a schematic entry tool. We manipulate binary code to navigate data, memory, and instruction sets.
 </br>
 Design testing involves generating test waveform files to show toggling between inputs and their outputs. The designs are ran through Verilog, and waveforms are viewed with GTKWave. The final delivery of the project is a brainless microprocessor that is programmable through the manipulation of the ROM values</br>
