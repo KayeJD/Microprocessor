@@ -91,9 +91,7 @@ The ROM values willl be loaded from the **rom_vals.hex** file. The _0x1205_ inst
 ![image](https://github.com/KayeJD/Microprocessor/assets/139111295/1c235a2f-1b55-4ba2-b8f9-1b82dff9ffba) </br>
 Each component in the microcontroller is a copressed version of all the other components built in parts 1-3. 
 
-
-
-## Part 5 - Complete Microprocessor Circuit
+## Demo
 ### Microprocessor
 ![](https://github.com/KayeJD/Microprocessor/blob/main/microprocessor.gif)
 ### GTKWave Simulation
