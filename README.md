@@ -9,7 +9,7 @@ Design testing involves generating test waveform files to show toggling between 
 We start by building a combinational logic circuit using primitive components. 
 ### 1.1 4-Bit Increment
 We will use this component for the Program Counter (PC). The 4-bit incrementor is composed of 4 1-bit adders to accept a 4-bit binary number. This circuit produces a 4-bit binary number and a carry (CRY) output. If CRY is _1_, the output number is one more than the 4-bit input. </br> </br>
-![](https://github.com/KayeJD/Microprocessor/blob/main/4bitinc.gif) </br>
+![](https://github.com/KayeJD/Microprocessor/blob/main/readmeAssets/4bitinc.gif) </br>
 Half Adder Logic: </br>
 | a | b | sum | cry |
 | --- | --- | --- | --- |
@@ -19,7 +19,7 @@ Half Adder Logic: </br>
 | 1 | 1 | 0 | 1 |
 ### 1.2 4-Bit Full Adder
 A 3-input XOR gate 
-![](https://github.com/KayeJD/Microprocessor/blob/main/4bitadder.gif)
+![](https://github.com/KayeJD/Microprocessor/blob/main/readmeAssets/4bitadder.gif)
 #### 1.3 Full Adder
 ![](https://github.com/KayeJD/Microprocessor/blob/main/fulladder.gif)
 
@@ -29,7 +29,7 @@ A 3-input XOR gate
 We need to be able to control the data flow through the circuit using the 4-bit 2-to-1 multiplexer. We also need to create the arithmetic logic unit (ALU) to perform add, sub, negate, etc. and the logical operations. 
 ### 2.1 4-bit 2-to-1 Mux
 The microprocessor I'm designing operates on 4-bit numbers, therefore, to accomplish multiplexer behavior on 4-bit numbers, I simply placed four instances of 2-bit muxes (logic table below) and wired up the _sel_ input for the 2-bit muxes from one singular _sel_ signal. Inputs _a_ and _b_ are 4-but buses and are split by bit and wired into each of the 2-bit mux's _a_ inputs. The same concept is applied for _b_. When **sel = 0**, the value on **a** is displayed for the output. When **sel = 1**, the value of **b** is passed through to the output. 
-![](https://github.com/KayeJD/Microprocessor/blob/main/4bitmux.gif) </br>
+![](https://github.com/KayeJD/Microprocessor/blob/main/readmeAssets/4bitmux.gif) </br>
 2-bit-mux logic:
 | s | a | b | y |
 | --- | --- | --- | --- |
@@ -42,7 +42,7 @@ The microprocessor I'm designing operates on 4-bit numbers, therefore, to accomp
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 |
 ### 2.2 Arithmetic Logic Unit 
-![](https://github.com/KayeJD/Microprocessor/blob/main/alu.gif)
+![](https://github.com/KayeJD/Microprocessor/blob/main/readmeAssets/alu.gif)
 #### NOT_NEG
 This circuit component can perform **2's complement** operations, **1's complement** operations, or allow input to **pass through**.
 | Invert | Neg | Function |
@@ -64,8 +64,8 @@ This circuit component can perform **2's complement** operations, **1's compleme
 ## Part 3
 ### 3.1 Accumulator and PC
 A 4-bit storage unit is needed since this microprocessor operates on 4 bits. A **4-bit parallel D register** is needed and this will be a component in the CPUs accumulator. 
-![](https://github.com/KayeJD/Microprocessor/blob/main/4bitreg.gif)
-![](https://github.com/KayeJD/Microprocessor/blob/main/pc.gif)
+![](https://github.com/KayeJD/Microprocessor/blob/main/readmeAssets/4bitreg.gif)
+![](https://github.com/KayeJD/Microprocessor/blob/main/readmeAssets/pc.gif)
 ### 3.2 Instantiating RAM
 We still need a memory component in order to store instructions and data. The memory for this project has 16 words, with 4 bits each word (_4-bit RAM with 16 4-bit words_). </br>
 The **ram_vals.hex** file is used to initialize the contents of the RAM. Each line of is read in binary and then loaded into each address in the RAM. A short commented instruction set is inserted as an example
@@ -80,7 +80,7 @@ The final part of building the microprocessor involves defining the instruction 
 ### 4.1 Memory-Address-Generation Circuit
 The memory address generation unit will be able to access memory locations in and out of sequential order. It will either automatically increment memory addresses after each instruction, or change memory locations in order to store or read data. This unit is comprised of a **register and incrementor (PC),** which will act like the pc, and a **memory address register (MAR).** </br>
 The MAR takes a memory address from the RAM into the _data_bus_ and _load_mar_ is the enable signal to load the memory and push it into the output. When the _use_pc_ is high, the pc values drive the following memory address, when it is low, the MAR content is supplies into the address bus. 
-![](https://github.com/KayeJD/Microprocessor/blob/main/pgrmctr.gif)
+![](https://github.com/KayeJD/Microprocessor/blob/main/readmeAssets/pgrmctr.gif)
 ### 4.2 Controller Input
 The controller will automatically set all of the signals to execute each operation. The **Program Ram** stores the opcodes that stores operations in hexidecimal form. The ROM is going to be used to decode the instructions and generate all of the signals neededd to operate the CPU according to the instructions. The only other signals that will not be automated will be the **clk, reset, and data_in.** </br>
 Some of the instructions that will be used to test the microcontroller will not be completed in one clock cycle, so this microcontroller will be a **ROM-based finite state machine** that will be able to break down the opcodes into _micro-ops_. </br> </br>
@@ -93,6 +93,6 @@ Each component in the microcontroller is a copressed version of all the other co
 
 ## Demo
 ### Microprocessor
-![](https://github.com/KayeJD/Microprocessor/blob/main/microprocessor.gif)
+![](https://github.com/KayeJD/Microprocessor/blob/main/readmeAssets/microprocessor.gif)
 ### GTKWave Simulation
 ![image](https://github.com/KayeJD/Microprocessor/assets/139111295/df8670d6-a2df-457b-827c-d9ae23ee01cd)
